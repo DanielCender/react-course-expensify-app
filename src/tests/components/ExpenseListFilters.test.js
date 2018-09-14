@@ -2,7 +2,6 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { ExpenseListFilters } from '../../components/ExpenseListFilters';
 import { filters, altFilters } from '../fixtures/filters';
-import 'react-dates/initialize';
 import moment from 'moment';
 
 let setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate, wrapper;
@@ -78,7 +77,7 @@ test('should handle date changes', () => {
 	});
 	const startDate = moment(0).add(4, 'years');
 	const endDate = moment(0).add(8, 'days');
-	wrapper.find('withStyles(DateRangePicker)').prop('onDatesChange')({
+	wrapper.find('DateRangePicker').prop('onDatesChange')({
 		startDate,
 		endDate,
 	});
@@ -88,8 +87,6 @@ test('should handle date changes', () => {
 
 test('should handle date focus changes', () => {
 	const calendarFocused = 'endDate';
-	wrapper.find('withStyles(DateRangePicker)').prop('onFocusChange')(
-		calendarFocused,
-	);
+	wrapper.find('DateRangePicker').prop('onFocusChange')(calendarFocused);
 	expect(wrapper.state('calendarFocused')).toBe(calendarFocused);
 });
