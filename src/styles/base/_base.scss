@@ -1,5 +1,9 @@
 // rem unit measurements
 // 16 * 62.5 = 100
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -7,6 +11,8 @@ html {
 body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: $m-size;
+  color: $dark-grey;
+  line-height: 1.6;
 }
 
 button {

@@ -19,5 +19,3 @@ test('should call startLogout on button click', () => {
 	wrapper.find('button').simulate('click', {});
 	expect(startLogout).toHaveBeenCalled();
 });
-
-test('LoginPage test file -> should call startLogin on button click', () => {});
